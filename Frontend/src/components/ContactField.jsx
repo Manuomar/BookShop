@@ -1,14 +1,14 @@
 import React from 'react'
 
-const ContactField = () => {
+const ContactField = (theme) => {
   return (
     <div className='mt-10'>
-      <section class="bg-white dark:bg-gray-900 mx-10">
+      <section class=" dark:bg-gray-900 mx-10 dark:text-white">
     <div class="container px-6 py-12 mx-auto">
         <div>
             <p class="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
 
-            <h1 class="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Chat to our friendly team</h1>
+            <h1 class="mt-2 text-2xl font-semibold light:text-gray-800 md:text-3xl dark:text-white">Chat to our friendly team</h1>
 
             <p class="mt-3 text-gray-500 dark:text-gray-400">We’d love to hear from you. Please fill out this form or shoot us an email.</p>
         </div>
@@ -22,7 +22,7 @@ const ContactField = () => {
                         </svg>
                     </span>
 
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
+                    <h2 class="mt-4 text-base font-medium light:text-gray-800 dark:text-white">Email</h2>
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
                     <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">hello@merakiui.com</p>
                 </div>
@@ -35,7 +35,7 @@ const ContactField = () => {
                         </svg>
                     </span>
                     
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Live chat</h2>
+                    <h2 class="mt-4 text-base font-medium light:text-gray-800 dark:text-white">Live chat</h2>
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
                     <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">Start new chat</p>
                 </div>
@@ -48,7 +48,7 @@ const ContactField = () => {
                         </svg>
                     </span>
                     
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
+                    <h2 class="mt-4 text-base font-medium light:text-gray-800 dark:text-white">Office</h2>
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at our office HQ.</p>
                     <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">100 Smith Street Collingwood VIC 3066 AU</p>
                 </div>
@@ -60,13 +60,13 @@ const ContactField = () => {
                         </svg>
                     </span>
                     
-                    <h2 class="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
+                    <h2 class="mt-4 text-base font-medium light:text-gray-800 dark:text-white">Phone</h2>
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
                     <p class="mt-2 text-sm text-blue-500 dark:text-blue-400">+1 (555) 000-0000</p>
                 </div>
             </div>
 
-            <div class="p-4 py-6 lg:-mt-30 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+            <div class="p-4 py-6 lg:-mt-30 rounded-lg bg-gray-100 dark:bg-gray-800 md:p-8">
                 <form >
                     <div class="-mx-2  md:items-center md:flex">
                         <div class="flex-1 px-2">

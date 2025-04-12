@@ -8,7 +8,6 @@ import Books from './Pages/Books'
 import Temp from './Pages/Temp';
 import { Route, Router, Routes } from 'react-router-dom'
 function App() {
-
   return (
   <>
   <div>

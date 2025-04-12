@@ -1,16 +1,17 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <div className=' font-[Poppins]'>
       <hr className='mt-5 border-amber-100' />
       <footer className="footer footer-horizontal footer-center  text-base-content rounded p-10 bottom-0">
   <nav className="grid grid-flow-col gap-4">
-    <a className="link link-hover">Home</a>
-    <a className="link link-hover">Books</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">About</a>
-
+    <div className='flex justify-between space-x-7 font-semibold  '>
+    <Link to='/' className="link link-hover no-underline ">Home</Link>
+    <Link to='/books' className="link link-hover no-underline ">Books</Link>
+    <Link to='/contact' className="link link-hover no-underline ">Contact</Link>
+    <Link to='/about' className="link link-hover no-underline ">About</Link>
+    </div>
   </nav>
   <nav>
     <div className="grid grid-flow-col gap-4">

@@ -22,6 +22,17 @@ const Navbar = () => {
       <li><Link to='/contact'>Contact</Link ></li>
       <li><Link to='/about'>About</Link ></li>
   </>
+  const [theme , setTheme] = useState(localStorage.getItem("theme")?localStorage.getItem("theme"):"Light");
+ 
+  useEffect(() => {
+    const currentTheme = theme.toLowerCase(); // 'light' or 'dark'
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "Light" ? "Dark" : "Light"));
+  };
   return (
     <div className={` max-w-screen-2xl container mx-auto md:px-40 px-4 font-[Poppins] fixed z-50 top-0 
     ${sticky?"sticky-navbar shadow-md bg-base-200 duration-100 transition-all ease-in-out fixed " :""} 
@@ -61,7 +72,10 @@ const Navbar = () => {
 <div>
 <label className="swap swap-rotate">
   {/* this hidden checkbox controls the state */}
-  <input type="checkbox" className="theme-controller" value="synthwave" />
+  <input type="checkbox" className="theme-controller" value="synthwave"
+  onChange={toggleTheme}
+  checked={theme === "Dark"}
+  />
 
   {/* sun icon */}
   <svg
@@ -93,4 +107,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

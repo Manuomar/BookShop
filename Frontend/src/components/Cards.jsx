@@ -7,7 +7,7 @@ const Cards = ({item}) => {
   return (
     <>
     <div className='mt-4 my-3 p-3 '>
-    <div className="card bg-base-100 sm:w-65 md:w-80 shadow-sm">
+    <div className="card bg-amber-300  text-black hover:scale-105 sm:w-65 md:w-80 shadow-sm">
   <figure>
     <img
       src={item.Image}
@@ -21,7 +21,7 @@ const Cards = ({item}) => {
     <p>{item.title}</p>
     <div className="card-actions justify-between">
       <div className="badge badge-outline">${item.price}</div>
-      <div className="badge badge-outline cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-pink-600 hover:text-white duration-200">Add to cart</div>
+      <div className="badge badge-outline cursor-pointer px-2 py-3 rounded-full border-[2px] border-black hover:bg-pink-600 hover:text-white duration-200">Add to cart</div>
     </div>
   </div>
 </div>
