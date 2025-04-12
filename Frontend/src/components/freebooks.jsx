@@ -1,6 +1,6 @@
 import React from 'react'
 import list from '../../public/list.json'
-
+import Cards from './Cards';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -44,7 +44,7 @@ const Freebooks = () => {
   };
   return (
    <>
-   <div className='mx-20'>
+   <div className='md:mx-20 mx-7'>
     <h1 className=' text-2xl font-bold'>
       Free Offered Books
     </h1>
@@ -53,33 +53,12 @@ const Freebooks = () => {
 
    {/* Slider */}
 
-<div className='mx-20'>
+<div className='mx-20 mt-5 '>
 <div className="slider-container">
       <Slider {...settings}>
-        <div>
-          <h3>1</h3>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-        <div>
-          <h3>7</h3>
-        </div>
-        <div>
-          <h3>8</h3>
-        </div>
+       {filterData.map((item)=>(
+        <Cards item = {item} key={item.id}/>
+       ))}
       </Slider>
     </div>
 </div>
