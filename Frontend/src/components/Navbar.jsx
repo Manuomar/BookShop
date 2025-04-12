@@ -23,7 +23,7 @@ const Navbar = () => {
       <li><a>About</a></li>
   </>
   return (
-    <div className={` max-w-screen-2xl container mx-auto md:px-40 px-4 font-[Poppins] 
+    <div className={` max-w-screen-2xl container mx-auto md:px-40 px-4 font-[Poppins] fixed z-50 top-0
     ${sticky?"sticky-navbar shadow-md bg-base-200 duration-100 transition-all ease-in-out fixed " :""} 
     `}>
       {/*fixed top-0 left-0 right-0
