@@ -1,25 +1,27 @@
 import React from 'react'
 
-const Cards = (item) => {
-    console.log(item);
+const Cards = ({item}) => {
+    // console.log(item);
+    // const name = item.name;
+    // console.log(name)
   return (
     <>
-    <div>
-    <div className="card bg-base-100 w-96 shadow-sm">
+    <div className='mt-4 my-3 p-3 '>
+    <div className="card bg-base-100 sm:w-65 md:w-80 shadow-sm">
   <figure>
     <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" />
+      src={item.Image}
+      alt={item.name} />
   </figure>
   <div className="card-body">
     <h2 className="card-title">
-      Card Title
-      <div className="badge badge-secondary">NEW</div>
+      {item.name}
+      <div className="badge badge-secondary">{item.category}</div>
     </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div className="card-actions justify-end">
-      <div className="badge badge-outline">Fashion</div>
-      <div className="badge badge-outline">Products</div>
+    <p>{item.title}</p>
+    <div className="card-actions justify-between">
+      <div className="badge badge-outline">${item.price}</div>
+      <div className="badge badge-outline cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-pink-600 hover:text-white duration-200">Add to cart</div>
     </div>
   </div>
 </div>

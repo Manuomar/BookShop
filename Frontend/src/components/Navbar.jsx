@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [sticky,setSticky] = useState("false");
   useEffect(()=>{
@@ -17,13 +17,13 @@ const Navbar = () => {
     }
   },[])
   const navItems = <>
-   <li><a>Home</a></li>
-      <li><a>Books</a></li>
-      <li><a>Contact</a></li>
-      <li><a>About</a></li>
+   <li><Link to='/'>Home</Link ></li>
+      <li><Link to='/books'>Books</Link ></li>
+      <li><Link to='/contact'>Contact</Link ></li>
+      <li><Link to='/about'>About</Link ></li>
   </>
   return (
-    <div className={` max-w-screen-2xl container mx-auto md:px-40 px-4 font-[Poppins] fixed z-50 top-0
+    <div className={` max-w-screen-2xl container mx-auto md:px-40 px-4 font-[Poppins] fixed z-50 top-0 
     ${sticky?"sticky-navbar shadow-md bg-base-200 duration-100 transition-all ease-in-out fixed " :""} 
     `}>
       {/*fixed top-0 left-0 right-0
@@ -41,7 +41,7 @@ const Navbar = () => {
       {navItems}
       </ul>
     </div>
-    <a className=" text-2xl font-bold cursor-pointer">BookShop</a>
+    <Link to='/' className=" text-2xl font-bold cursor-pointer">BookShop</Link>
   </div>
   <div className="navbar-end space-x-3">
   <div className="navbar-center hidden lg:flex">

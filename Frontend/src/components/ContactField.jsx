@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactField = () => {
   return (
-    <div>
+    <div className='mt-10'>
       <section class="bg-white dark:bg-gray-900 mx-10">
     <div class="container px-6 py-12 mx-auto">
         <div>

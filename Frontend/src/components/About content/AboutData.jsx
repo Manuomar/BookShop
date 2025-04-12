@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutData = () => {
   return (
-    <div >
+    <div className='mt-25' >
       <h1 className='md:text-3xl mx-3 md:flex justify-center md:items-center font-bold mt-10 '><span className='text-pink-600'>Welcome to Bookshop – </span>Your Gateway to Infinite Stories and Knowledge!</h1>
       <p className='mt-8 mx-4 md:mx-40 text-xl'>Bookshop is your all-in-one digital library, offering a seamless reading experience with a diverse collection of both free and premium books. Whether you're a casual reader or a dedicated bibliophile, Bookshop is designed to meet your literary needs, anytime, anywhere.
 </p>
