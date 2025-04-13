@@ -1,7 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useForm } from "react-hook-form"
 import Login from './login'
 const SignUP = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+
+  // const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+  }
+  console.log(watch("example")) 
   return (
     //   <>
     //   <div className='flex h-screen items-center justify-center'>
@@ -24,28 +41,51 @@ const SignUP = () => {
         <div className='flex h-screen items-center justify-center  '>
      <div className='w-[600]'>
          <div className=' bg-base-200 shadow-2xl p-10 rounded-md'>
-           <form method=''>
+           <form method='' onSubmit={handleSubmit(onSubmit)} >
                 <Link
                 to='/' className='btn bg-black text-amber-50  absolute right-150 top-50'>X</Link>
-             </form>
+        
              <h3 className='font-bold text-lg'>Signup</h3>
              <div className='mt-4 space-y-2'>
     <span>Name</span><br />
     <input type="text" placeholder='Enter Your FullName'
-    className='w-80 px-3 py-1 border rounded-md outline-none' />
+    className='w-80 px-3 py-1 border rounded-md outline-none'
+    {...register("fullname", { required: true })} />
+     <br />
+                {errors.fullname && (
+                  <span className="text-sm text-red-500">
+                    This field is required
+                  </span>
+                )}
              </div>
 
              <div className='mt-4 space-y-2'>
     <span>Email</span><br />
     <input type="text" placeholder='Enter Your Email'
-    className='w-80 px-3 py-1 border rounded-md outline-none' />
+    className='w-80 px-3 py-1 border rounded-md outline-none' 
+    {...register("email", { required: true })}/>
+    <br />
+                {errors.email && (
+                  <span className="text-sm text-red-500">
+                    This field is required
+                  </span>
+                )}
              </div>
 
              <div className='mt-4 space-y-2'>
     <span>Password</span><br />
     <input type="text" placeholder='Enter Your Password'
-    className='w-80 px-3 py-1 border rounded-md outline-none' />
+    className='w-80 px-3 py-1 border rounded-md outline-none' 
+    {...register("password", { required: true })}/>
+     <br />
+                {errors.password && (
+                  <span className="text-sm text-red-500">
+                    This field is required
+                  </span>
+                )}
              </div>
+
+
              <div className='flex justify-around mt-8'>
                <button className='bg-pink-600 text-white rounded-md px-5 py-2.5 cursor-pointer hover:scale-105 duration-100'> Login</button>
                <p className='mt-4 ml-5'>
@@ -54,7 +94,7 @@ const SignUP = () => {
                  '>Login</button><Login/>
                </p>
              </div>
-
+             </form>
        </div>
 
     </div>

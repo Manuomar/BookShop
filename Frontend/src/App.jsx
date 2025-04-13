@@ -8,6 +8,7 @@ import Books from './Pages/Books'
 import Temp from './Pages/Temp';
 import SignUP from './components/SignUP';
 import { Route, Router, Routes } from 'react-router-dom'
+import SignIN from './components/SignIN';
 function App() {
   return (
   <>
@@ -20,8 +21,8 @@ function App() {
   <Route path='/books' element ={<Books/>}/>
   <Route path='/contact' element = {<Contact/>}/>
   <Route path='/about' element = {<About/>}/>
-  <Route path='/signup' element = {<SignUP/>}/>
- 
+  {/* <Route path='/' element = {<SignUP/>}/> */}
+ <Route path='/signup' element = {<SignIN/>}/>
 </Routes>
 
   </div>
