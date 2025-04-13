@@ -1,7 +1,8 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
-import {Link} from 'react-router-dom'
+import {data, Link} from 'react-router-dom'
 import Login from './login'
+import axios from 'axios'
 const SignIN = () => {
     const {
         register,
@@ -10,9 +11,20 @@ const SignIN = () => {
         formState: { errors },
       } = useForm()
     
-      const onSubmit = (data) => console.log(data)
+      const onSubmit = (data) => {
+        const userInfo = {
+          FullName :data.FullName,
+          Email : data.Email,
+          Password : data.Password
+        }
+      }
+      console.log(data)
     
-      console.log(watch("example")) // watch input value by passing the name of it
+      console.log(watch("example")) 
+      // watch input value by passing the name of it
+
+      // connecting backend 
+      
   return (
     <>
     <div className='flex  justify-center items-center h-screen '>

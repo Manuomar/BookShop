@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import list from '../../../public/list.json'
 import Cards from '../Cards'
+import axios from 'axios'
+
 const FullBooks = () => {
+
+  const [book,setBook] = useState([]);
+  useEffect(()=>{
+    const getBook = async()=>{
+      try {
+     const res =  await axios.get("http://localhost:3000/book");
+    //  axiox.httpRequest ('URL')
+     console.log(res.data);
+     setBook(res.data);
+      } catch (error) {
+        console.log("error in getting data in frontend ",error);
+      }
+    }
+    getBook();
+  },[]);
+
     const item = {list}
     console.log(item)
   return (
@@ -32,7 +50,9 @@ const FullBooks = () => {
 
 {/*  Gird of books */}
 <div className="mt-12 grid grid-cols-1 md:grid-cols-4">
-{list.map((item)=>(<Cards item = {item} id={item.id}/>))}
+  {/* getting data from backend */}
+{book.map((item)=>(<Cards item = {item} id={item._id}/>))}
+{/* {list.map((item)=>(<Cards item = {item} id={item.id}/>))} */}
     </div>
 
 
