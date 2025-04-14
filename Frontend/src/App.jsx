@@ -6,7 +6,6 @@ import './index.css';
 import About from './Pages/About';
 import Books from './Pages/Books'
 import Temp from './Pages/Temp';
-import SignUP from './components/SignUP';
 import { Route, Router, Routes } from 'react-router-dom'
 import SignIN from './components/SignIN';
 function App() {

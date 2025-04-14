@@ -19,7 +19,12 @@ export const signup = async(req,res)=>{
         })
        await createdUser.save()
         res.status(201).json({
-            message:"new user created"
+            message:"new user created",
+            user:{
+              _id:createdUser._id,
+              Fullname:createdUser.Fullname,
+              Email:createdUser.Email
+            }
         })
     } catch (error) {
         console.log("error in user creation ",error);
