@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Login from './login';
+import Logout from './logout';
+import { useAuth } from '../Context/AuthProvider';
 const Navbar = () => {
+  const [authUser,setAuthUser] = useAuth()
+
   const [sticky,setSticky] = useState("false");
   useEffect(()=>{
     const handleScroll = ()=>{
@@ -99,11 +103,19 @@ const Navbar = () => {
 </div>
 
 {/* login bu */}
+
+{
+  authUser? <Logout/>:
   <div className="">
-    <a className="bg-black  text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer ml-2"
-    onClick={()=>document.getElementById("my_modal_3").showModal()}
-    >LogIn</a><Login/>
-  </div>
+  <a className="bg-black  text-white px-3 py-2 rounded-md hover:bg-slate-800 duration-300 cursor-pointer ml-2"
+  onClick={()=>document.getElementById("my_modal_3").showModal()}
+  >LogIn</a><Login/>
+ 
+
+</div>
+
+}
+ 
 </div>
 </div>
     </div>

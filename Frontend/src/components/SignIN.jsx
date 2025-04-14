@@ -112,9 +112,10 @@
 // }
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, replace, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Login from './login.jsx';
+import toast from 'react-hot-toast';
 
 const SignIN = () => {
   const {
@@ -123,7 +124,10 @@ const SignIN = () => {
     formState: { errors },
     watch
   } = useForm();
-
+// naviagte to home after sign in
+const location = useLocation();
+const naviagte = useNavigate()
+const from = location.state?.from?.pathname || "/" 
   const onSubmit = async (formData) => {
     const userInfo = {
       Fullname: formData.Fullname,
@@ -135,13 +139,16 @@ const SignIN = () => {
       const res = await axios.post("http://localhost:3000/user/signup", userInfo);
       console.log(res.data);
       if (res.data) {
-        alert("Sign Up successful");
+        // alert("Sign Up successful");
+        toast.success("Sign Up successful");
         localStorage.setItem("user",JSON.stringify(res.data.user));
+        naviagte(from,{replace:true});
       }
     } catch (err) {
       if(err.response){
       console.error(err);
-      alert("Signup error: " + err.response.data.message);
+      // alert("Signup error: " + err.response.data.message);
+      toast.error("Sign-Up error: " + err.response.data.message);
     }
   }
   };

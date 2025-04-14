@@ -4,7 +4,7 @@ Dasiy UI
 react slick slider
 react router hook
 react hook form
-
+react hot toast -- create attractive pop up
 ### backend dependencies 
 Nodemon , Express , Mongoose, bcrypt ,Cors ,routers ,dotenv
 
@@ -14,3 +14,4 @@ use cors - to connect port of frontend and backend (install in backend) - its a 
 
 
 NOTE - sign-UP data ko local storage me store kara kr kahi bhi use kr sakte hai context api create krke 
+context api ke through hm variables ko globally use kr sakte hai.

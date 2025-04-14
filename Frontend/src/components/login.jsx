@@ -81,7 +81,7 @@ import React from 'react'
 import { useForm } from "react-hook-form"
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import toast from 'react-hot-toast'
 const Login = () => {
   const {
     register,
@@ -99,13 +99,21 @@ const Login = () => {
       const res = await axios.post("http://localhost:3000/user/login", userInfo);
       console.log(res.data);
       if (res.data) {
-        alert("Login successful");
+        // alert("Login successful");
+        toast.success("Login successful")
         localStorage.setItem("user", JSON.stringify(res.data.user));
-        document.getElementById("my_modal_3").close(); // Close modal after successful login
+        document.getElementById("my_modal_3").close(); 
+        // Close modal after successful login
+        setTimeout(()=>{
+          window.location.reload();
+        },400)
+       
+
       }
     } catch (err) {
       console.error(err);
-      alert("Login error: " + (err.response?.data?.message || "Unexpected error"));
+      // alert("Login error: " + (err.response?.data?.message || "Unexpected error"));
+      toast.error("Login error: " + (err.response?.data?.message || "Unexpected error"))
     }
   };
 
