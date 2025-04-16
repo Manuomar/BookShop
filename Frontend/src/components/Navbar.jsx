@@ -39,7 +39,7 @@ const Navbar = () => {
     setTheme((prev) => (prev === "Light" ? "Dark" : "Light"));
   };
   return (
-    <div className={` max-w-screen-2xl container mx-auto md:px-40 px-4 font-[Poppins] fixed z-50 top-0 
+    <div className={` max-w-screen-2xl container mx-auto md:px-40 px-4 font-[Poppins] fixed z-100 top-0 
     ${sticky?"sticky-navbar shadow-md bg-base-200 duration-100 transition-all ease-in-out fixed " :""} 
     `}>
       {/*fixed top-0 left-0 right-0
@@ -66,13 +66,24 @@ const Navbar = () => {
     </ul>
   </div>
 {/* Search bar */}
-<div className='hidden md:block'>
+{/* <div className='hidden md:block'>
   <label className="input border-1">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
-  <input type="search"  required placeholder="Search" className='w-50 outline-none'/>
+  <input type="search"  required placeholder="Search" 
+  className='w-50 outline-none focus:outline-none focus:ring-0'/>
 </label>
+</div> */}
+<div className='hidden md:block'>
+  <label className="flex items-center gap-2 border border-gray-600 rounded px-3 py-2">
+    <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+    <input 
+      type="search"  
+      required 
+      placeholder="Search"
+      className='bg-transparent w-50 text-white outline-none focus:outline-none focus:ring-0 focus:border-transparent'
+    />
+  </label>
 </div>
-
 {/* toggle button */}
 <div>
 <label className="swap swap-rotate">

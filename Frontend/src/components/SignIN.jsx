@@ -110,7 +110,7 @@
 //     </>
 //   )
 // }
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link, replace, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -118,6 +118,7 @@ import Login from './login.jsx';
 import toast from 'react-hot-toast';
 
 const SignIN = () => {
+  const [showPassword,setShowPassword] = useState("false")
   const {
     register,
     handleSubmit,
@@ -190,13 +191,20 @@ const from = location.state?.from?.pathname || "/"
           <label className="input validator mt-3 mb-2">
             <input
               name="Password"
-              type="password"
+              type={showPassword?"text":"password"}
               placeholder="Password"
               minLength={8}
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
-              {...register("Password", { required: true })}
-            />
+              {...register("Password", { required: true })}/>
+              <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="text-sm text-gray-400 hover:text-white focus:outline-none"
+            >
+              {showPassword?"Hide":"Show"}
+            </button>
+            
           </label>
           <p className="validator-hint hidden">
             Must be more than 8 characters, including:
